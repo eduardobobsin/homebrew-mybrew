@@ -1,0 +1,48 @@
+name: Build bottle
+
+on:
+  workflow_dispatch:
+    inputs:
+      formula:
+        description: homebrew/core formula to bottle for Intel Sequoia
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tap-writes
+  cancel-in-progress: false
+
+env:
+  ROOT_URL: https://github.com/${{ github.repository }}/releases/download/bottles
+
+jobs:
+  bottle:
+    runs-on: macos-15-intel
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update Homebrew
+        run: brew update
+
+      - uses: eduardobobsin/mybrew/actions/import-formula@main
+        with:
+          formula: ${{ inputs.formula }}
+
+      - id: build
+        uses: eduardobobsin/mybrew/actions/build-bottle@main
+        with:
+          formula: ${{ inputs.formula }}
+          root-url: ${{ env.ROOT_URL }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.formula }}-${{ steps.build.outputs.tag }}
+          path: ${{ steps.build.outputs.output-dir }}
+
+      - uses: eduardobobsin/mybrew/actions/publish-github-release@main
+        with:
+          formula: ${{ inputs.formula }}
+          bottle-dir: ${{ steps.build.outputs.output-dir }}

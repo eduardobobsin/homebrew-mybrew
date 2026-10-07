@@ -1,0 +1,13 @@
+# mybrew instance configuration. Not read by anything yet (M0/M1); this is
+# where storage and platform settings move once S3 lands in M2.
+engine:
+  repository: eduardobobsin/mybrew
+  ref: main
+
+platform:
+  runner: macos-15-intel
+  bottle_tag: sequoia
+
+storage:
+  provider: github-release
+  release_tag: bottles
