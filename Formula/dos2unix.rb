@@ -11,8 +11,8 @@ class Dos2unix < Formula
   end
 
   bottle do
-    root_url "https://github.com/eduardobobsin/homebrew-mybrew/releases/download/bottles"
-    sha256 cellar: :any_skip_relocation, sequoia: "dfa7c931b0422b82d005a456a5d081bb8e5656b7ed80797166aa522aaeadff68"
+    root_url "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia"
+    sha256 cellar: :any_skip_relocation, sequoia: "f5afb783d6a2e76b770dea86f255877b0c0d2f4277b3d0bda89686fe326c4089"
   end
 
   deny_network_access!
