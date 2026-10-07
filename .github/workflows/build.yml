@@ -8,7 +8,7 @@ on:
         required: true
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: tap-writes
@@ -18,11 +18,17 @@ env:
   ROOT_URL: https://github.com/${{ github.repository }}/releases/download/bottles
 
 jobs:
-  bottle:
+  # Runs untrusted upstream build code, so it gets a read-only token that is
+  # never written to disk.
+  build:
     runs-on: macos-15-intel
     timeout-minutes: 120
+    outputs:
+      tag: ${{ steps.build.outputs.tag }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Update Homebrew
         run: brew update
@@ -37,12 +43,32 @@ jobs:
           formula: ${{ inputs.formula }}
           root-url: ${{ env.ROOT_URL }}
 
+      - name: Stage formula with bottle block
+        run: cp "Formula/${{ inputs.formula }}.rb" "${{ steps.build.outputs.output-dir }}/"
+
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.formula }}-${{ steps.build.outputs.tag }}
+          name: bottle
           path: ${{ steps.build.outputs.output-dir }}
+
+  # Only this job can write, and it runs no formula code.
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: bottle
+          path: ${{ runner.temp }}/bottles
+
+      - name: Take formula from build
+        run: mv "${{ runner.temp }}/bottles/${{ inputs.formula }}.rb" "Formula/${{ inputs.formula }}.rb"
 
       - uses: eduardobobsin/mybrew/actions/publish-github-release@main
         with:
           formula: ${{ inputs.formula }}
-          bottle-dir: ${{ steps.build.outputs.output-dir }}
+          bottle-dir: ${{ runner.temp }}/bottles
