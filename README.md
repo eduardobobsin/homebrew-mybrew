@@ -16,5 +16,5 @@ brew install eduardobobsin/mybrew/<formula>
 Actions → **Build bottle** → Run workflow → enter a `homebrew/core` formula name.
 
 The workflow copies the formula from homebrew-core (checksum-verified), builds it on
-`macos-15-intel`, uploads the bottle to the `bottles` release and commits
+`macos-15-intel`, uploads the bottle to S3 (`mybrew-bottles`, via GitHub OIDC) and commits
 `Formula/<formula>.rb` with a matching `bottle do` block.

@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  ROOT_URL: https://github.com/${{ github.repository }}/releases/download/bottles
+  ROOT_URL: ${{ vars.MYBREW_ROOT_URL }}
 
 jobs:
   # Runs untrusted upstream build code, so it gets a read-only token that is
@@ -51,12 +51,14 @@ jobs:
           name: bottle
           path: ${{ steps.build.outputs.output-dir }}
 
-  # Only this job can write, and it runs no formula code.
+  # Only this job can write to the tap or get AWS credentials, and it runs no
+  # formula code.
   publish:
     needs: build
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
 
@@ -68,7 +70,11 @@ jobs:
       - name: Take formula from build
         run: mv "${{ runner.temp }}/bottles/${{ inputs.formula }}.rb" "Formula/${{ inputs.formula }}.rb"
 
-      - uses: eduardobobsin/mybrew/actions/publish-github-release@main
+      - uses: eduardobobsin/mybrew/actions/publish-s3@main
         with:
           formula: ${{ inputs.formula }}
           bottle-dir: ${{ runner.temp }}/bottles
+          bucket: ${{ vars.MYBREW_S3_BUCKET }}
+          region: ${{ vars.MYBREW_AWS_REGION }}
+          role-arn: ${{ vars.MYBREW_AWS_ROLE_ARN }}
+          root-url: ${{ env.ROOT_URL }}

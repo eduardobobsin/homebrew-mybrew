@@ -1,5 +1,5 @@
-# mybrew instance configuration. Not read by anything yet (M0/M1); this is
-# where storage and platform settings move once S3 lands in M2.
+# mybrew instance configuration. Not read by anything yet; the workflow takes
+# its storage settings from the MYBREW_* repository variables.
 engine:
   repository: eduardobobsin/mybrew
   ref: main
@@ -9,5 +9,7 @@ platform:
   bottle_tag: sequoia
 
 storage:
-  provider: github-release
-  release_tag: bottles
+  provider: s3
+  bucket: mybrew-bottles
+  region: us-east-1
+  root_url: https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia
