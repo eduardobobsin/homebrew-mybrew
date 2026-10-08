@@ -1,4 +1,5 @@
 name: Build bottle
+run-name: Build ${{ inputs.formula }}
 
 on:
   workflow_dispatch:
