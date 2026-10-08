@@ -8,7 +8,9 @@ Intel Macs on macOS Sequoia, built on demand for formulae that no longer ship on
 ```bash
 brew tap eduardobobsin/mybrew
 brew trust --tap eduardobobsin/mybrew
-brew install eduardobobsin/mybrew/<formula>
+brew install eduardobobsin/mybrew/mybrew   # the client
+
+mybrew install <formula>   # builds a bottle on GitHub first if there is none
 ```
 
 ## Add a formula
