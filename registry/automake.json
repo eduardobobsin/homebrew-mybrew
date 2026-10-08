@@ -1,0 +1,13 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-08T12:34:54+00:00",
+      "filename": "automake-1.19.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "3ea8b5caf2e208a8f8b29b475cfb69618ee159437a396d5576cf9b34f106a067"
+    }
+  },
+  "build_time_only": false,
+  "mybrew_dependencies": [],
+  "version": "1.19"
+}
