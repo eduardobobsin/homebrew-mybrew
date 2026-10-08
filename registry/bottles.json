@@ -24,6 +24,18 @@
     },
     "version": "7.5.7"
   },
+  "jdupes": {
+    "bottles": {
+      "sequoia": {
+        "built_at": "2026-10-08T00:30:33+00:00",
+        "filename": "jdupes-1.31.2.sequoia.bottle.tar.gz",
+        "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+        "sha256": "a392a95b02889b7cff7d483124fe0fea3d791dbf9e7c90a7dcace729da1c7db4"
+      }
+    },
+    "mybrew_dependencies": [],
+    "version": "1.31.2"
+  },
   "readline": {
     "bottles": {
       "sequoia": {
