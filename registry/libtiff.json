@@ -1,0 +1,17 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-08T02:46:57+00:00",
+      "filename": "libtiff-4.7.2.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "85749e759719dae14ba0224a3ce2c47416d020efb448110a0f3736ba9fdc01af"
+    }
+  },
+  "build_time_only": false,
+  "mybrew_dependencies": [
+    "jpeg-turbo",
+    "webp",
+    "xz"
+  ],
+  "version": "4.7.2"
+}
