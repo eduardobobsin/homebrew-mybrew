@@ -1,0 +1,15 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-08T12:33:51+00:00",
+      "filename": "libngtcp2-1.25.0.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "f29e9ed0184570f34300fa03c10813462b4b413ab6fbf0b0ceb142f022ed18b0"
+    }
+  },
+  "build_time_only": false,
+  "mybrew_dependencies": [
+    "openssl@3"
+  ],
+  "version": "1.25.0"
+}
