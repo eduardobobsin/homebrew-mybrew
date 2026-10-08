@@ -1,0 +1,17 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-08T12:39:49+00:00",
+      "filename": "httpd-2.4.69.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "b1a740dd5161c01b1e74bfca48448b5d746fba0cf8bc665cd129043ca6ed548a"
+    }
+  },
+  "build_time_only": false,
+  "mybrew_dependencies": [
+    "libnghttp2",
+    "openssl@3",
+    "pcre2"
+  ],
+  "version": "2.4.69"
+}
