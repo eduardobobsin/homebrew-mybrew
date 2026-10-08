@@ -1,0 +1,13 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-08T08:16:17+00:00",
+      "filename": "libvmaf-3.2.1.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "88487f50f8840dd52811a86bce0b159ce4a82fe15c0d281d3665e2aaba4cdcad"
+    }
+  },
+  "build_time_only": false,
+  "mybrew_dependencies": [],
+  "version": "3.2.1"
+}
