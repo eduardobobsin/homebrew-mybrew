@@ -1,8 +1,8 @@
 class Mybrew < Formula
   desc "Install Homebrew formulae on Intel Macs, building missing bottles on demand"
   homepage "https://github.com/eduardobobsin/mybrew"
-  url "https://github.com/eduardobobsin/mybrew/archive/refs/tags/v0.7.5.tar.gz"
-  sha256 "bcfc63ed1e7a6fcdae3428da273e2f22ead22dd30b1800827e860f4f09321887"
+  url "https://github.com/eduardobobsin/mybrew/archive/refs/tags/v0.7.6.tar.gz"
+  sha256 "994ca31cb48c0e76e511c8fffbc6b3bf8f2424c2d8f3d66986144b0528f01745"
   license "MIT"
 
   def install
