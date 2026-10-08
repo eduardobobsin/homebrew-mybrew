@@ -1,0 +1,13 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-08T01:57:55+00:00",
+      "filename": "xz-5.8.4.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "eef918c0d2df878b938d739d631953b8c668f9f8deaf1f12a24eb81941dc01ff"
+    }
+  },
+  "build_time_only": false,
+  "mybrew_dependencies": [],
+  "version": "5.8.4"
+}
