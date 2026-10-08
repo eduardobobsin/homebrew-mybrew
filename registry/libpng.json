@@ -1,0 +1,13 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-08T02:25:26+00:00",
+      "filename": "libpng-1.6.59.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "b266d5460e12396da72c0f38f6db1385052ca7ac59508bab8efa9142241d329c"
+    }
+  },
+  "build_time_only": false,
+  "mybrew_dependencies": [],
+  "version": "1.6.59"
+}
