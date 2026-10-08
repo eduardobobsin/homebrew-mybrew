@@ -1,0 +1,15 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-08T00:25:43+00:00",
+      "filename": "calc-2.17.0.2.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "a5535bfb40310165b0f1cbc501bd024231d2d7ec1daa2e79c6f5517e394224ad"
+    }
+  },
+  "build_time_only": false,
+  "mybrew_dependencies": [
+    "readline"
+  ],
+  "version": "2.17.0.2"
+}

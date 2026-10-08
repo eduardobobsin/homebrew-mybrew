@@ -1,0 +1,13 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-07T23:55:23+00:00",
+      "filename": "dos2unix-7.5.7.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "f5afb783d6a2e76b770dea86f255877b0c0d2f4277b3d0bda89686fe326c4089"
+    }
+  },
+  "build_time_only": false,
+  "mybrew_dependencies": [],
+  "version": "7.5.7"
+}

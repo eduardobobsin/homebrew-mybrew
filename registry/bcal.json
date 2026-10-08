@@ -1,0 +1,13 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-08T00:56:33+00:00",
+      "filename": "bcal-2.6.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "cf8fde1b47ff2076e88d391011c2cb978996cd223a9c331dc3209e695dc6f607"
+    }
+  },
+  "build_time_only": false,
+  "mybrew_dependencies": [],
+  "version": "2.6"
+}
