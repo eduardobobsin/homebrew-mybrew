@@ -7,6 +7,7 @@
       "sha256": "661827fa9b70a7c84908a0f7d087d67c0486da1fdced97572fc9670542727def"
     }
   },
+  "build_seconds": 398,
   "build_time_only": false,
   "mybrew_dependencies": [
     "libvmaf"

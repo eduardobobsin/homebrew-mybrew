@@ -7,6 +7,7 @@
       "sha256": "b1a740dd5161c01b1e74bfca48448b5d746fba0cf8bc665cd129043ca6ed548a"
     }
   },
+  "build_seconds": 452,
   "build_time_only": false,
   "mybrew_dependencies": [
     "libnghttp2",

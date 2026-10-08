@@ -7,6 +7,7 @@
       "sha256": "e87d5318cc308a9ce80f7d716b2d42baf5274d6703698a770e36a1dae292c85f"
     }
   },
+  "build_seconds": 806,
   "build_time_only": false,
   "mybrew_dependencies": [
     "json-c",

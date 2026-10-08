@@ -7,6 +7,7 @@
       "sha256": "0d0037488af43bc5661d737d43cbabace1404f4fbfb376906527d5e83435b872"
     }
   },
+  "build_seconds": 370,
   "build_time_only": false,
   "mybrew_dependencies": [
     "openssl@3"

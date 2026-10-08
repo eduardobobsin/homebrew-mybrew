@@ -7,6 +7,7 @@
       "sha256": "e947cc3423ab572cd1ebd4d38f319febca40d06933c8a2486390498169c99e46"
     }
   },
+  "build_seconds": 191,
   "build_time_only": false,
   "mybrew_dependencies": [
     "libpng"

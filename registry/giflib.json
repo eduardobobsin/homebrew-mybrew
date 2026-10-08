@@ -7,6 +7,7 @@
       "sha256": "d1792f36b346050773e0825bed3cd9ba442081873d467f4968688e649993bcfe"
     }
   },
+  "build_seconds": 173,
   "build_time_only": false,
   "mybrew_dependencies": [],
   "version": "6.1.3"

@@ -7,6 +7,7 @@
       "sha256": "e41806a56e0e1525db07ee8d6d6f643bacbaecc15d8d6f1f95b34edc6a8cf5b8"
     }
   },
+  "build_seconds": 203,
   "build_time_only": false,
   "mybrew_dependencies": [
     "libunistring",
