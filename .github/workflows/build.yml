@@ -22,39 +22,59 @@ jobs:
   # never written to disk.
   build:
     runs-on: macos-15-intel
-    timeout-minutes: 120
+    timeout-minutes: 240
     outputs:
-      tag: ${{ steps.build.outputs.tag }}
+      formulae: ${{ steps.plan.outputs.formulae }}
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
 
+      - id: plan
+        uses: eduardobobsin/mybrew/actions/plan@main
+        with:
+          formula: ${{ inputs.formula }}
+
+      - name: Nothing to build
+        if: steps.plan.outputs.formulae == ''
+        env:
+          FORMULA: ${{ inputs.formula }}
+        run: echo "::notice::$FORMULA and its dependencies already have Intel bottles (official or mybrew)."
+
       - name: Update Homebrew
+        if: steps.plan.outputs.formulae != ''
         run: brew update
 
-      - uses: eduardobobsin/mybrew/actions/import-formula@main
+      - if: steps.plan.outputs.formulae != ''
+        uses: eduardobobsin/mybrew/actions/import-formula@main
         with:
-          formula: ${{ inputs.formula }}
+          formulae: ${{ steps.plan.outputs.formulae }}
 
       - id: build
+        if: steps.plan.outputs.formulae != ''
         uses: eduardobobsin/mybrew/actions/build-bottle@main
         with:
-          formula: ${{ inputs.formula }}
+          formulae: ${{ steps.plan.outputs.formulae }}
           root-url: ${{ env.ROOT_URL }}
 
-      - name: Stage formula with bottle block
-        run: cp "Formula/${{ inputs.formula }}.rb" "${{ steps.build.outputs.output-dir }}/"
+      - name: Stage formulae with bottle blocks
+        if: steps.plan.outputs.formulae != ''
+        env:
+          FORMULAE: ${{ steps.plan.outputs.formulae }}
+          OUTPUT_DIR: ${{ steps.build.outputs.output-dir }}
+        run: for f in $FORMULAE; do cp "Formula/$f.rb" "$OUTPUT_DIR/"; done
 
-      - uses: actions/upload-artifact@v4
+      - if: steps.plan.outputs.formulae != ''
+        uses: actions/upload-artifact@v4
         with:
-          name: bottle
+          name: bottles
           path: ${{ steps.build.outputs.output-dir }}
 
   # Only this job can write to the tap or get AWS credentials, and it runs no
   # formula code.
   publish:
     needs: build
+    if: needs.build.outputs.formulae != ''
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -64,11 +84,8 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: bottle
+          name: bottles
           path: ${{ runner.temp }}/bottles
-
-      - name: Take formula from build
-        run: mv "${{ runner.temp }}/bottles/${{ inputs.formula }}.rb" "Formula/${{ inputs.formula }}.rb"
 
       - uses: eduardobobsin/mybrew/actions/publish-s3@main
         with:
@@ -78,3 +95,19 @@ jobs:
           region: ${{ vars.MYBREW_AWS_REGION }}
           role-arn: ${{ vars.MYBREW_AWS_ROLE_ARN }}
           root-url: ${{ env.ROOT_URL }}
+
+  # A clean machine must install everything from the published tap without
+  # compiling anything.
+  verify:
+    needs: publish
+    runs-on: macos-15-intel
+    timeout-minutes: 60
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: bottles
+          path: ${{ runner.temp }}/bottles
+
+      - uses: eduardobobsin/mybrew/actions/verify-install@main
+        with:
+          plan-file: ${{ runner.temp }}/bottles/plan.json
