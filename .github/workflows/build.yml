@@ -57,21 +57,16 @@ jobs:
           formulae: ${{ steps.plan.outputs.formulae }}
           root-url: ${{ env.ROOT_URL }}
 
-      - name: Stage formulae with bottle blocks
-        if: steps.plan.outputs.formulae != ''
-        env:
-          FORMULAE: ${{ steps.plan.outputs.formulae }}
-          OUTPUT_DIR: ${{ steps.build.outputs.output-dir }}
-        run: for f in $FORMULAE; do cp "Formula/$f.rb" "$OUTPUT_DIR/"; done
-
       - if: steps.plan.outputs.formulae != ''
         uses: actions/upload-artifact@v4
         with:
           name: bottles
           path: ${{ steps.build.outputs.output-dir }}
 
-  # Only this job can write to the tap or get AWS credentials, and it runs no
-  # formula code.
+  # Only this job can write to the tap or get AWS credentials. It runs no
+  # formula code and trusts nothing in the build artifact beyond bottle
+  # tarballs whose metadata it validates; formulae are rebuilt from
+  # homebrew-core here.
   publish:
     needs: build
     if: needs.build.outputs.formulae != ''
@@ -79,6 +74,8 @@ jobs:
     permissions:
       contents: write
       id-token: write
+    outputs:
+      install: ${{ steps.publish.outputs.install }}
     steps:
       - uses: actions/checkout@v4
 
@@ -87,7 +84,8 @@ jobs:
           name: bottles
           path: ${{ runner.temp }}/bottles
 
-      - uses: eduardobobsin/mybrew/actions/publish-s3@main
+      - id: publish
+        uses: eduardobobsin/mybrew/actions/publish-s3@main
         with:
           formula: ${{ inputs.formula }}
           bottle-dir: ${{ runner.temp }}/bottles
@@ -103,11 +101,6 @@ jobs:
     runs-on: macos-15-intel
     timeout-minutes: 60
     steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: bottles
-          path: ${{ runner.temp }}/bottles
-
       - uses: eduardobobsin/mybrew/actions/verify-install@main
         with:
-          plan-file: ${{ runner.temp }}/bottles/plan.json
+          formulae: ${{ needs.publish.outputs.install }}
