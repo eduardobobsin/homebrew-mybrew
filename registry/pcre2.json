@@ -1,0 +1,13 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-08T01:57:25+00:00",
+      "filename": "pcre2-10.49.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "ce103d7d4a262e53329dc5ea90fe9665e712746e3e521331ee0013249d4315df"
+    }
+  },
+  "build_time_only": false,
+  "mybrew_dependencies": [],
+  "version": "10.49"
+}
