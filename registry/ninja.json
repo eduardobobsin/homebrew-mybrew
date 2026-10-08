@@ -1,0 +1,13 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-08T02:31:01+00:00",
+      "filename": "ninja-1.13.2.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "da4f7ba09e5a5d6223ac2b3107f50f88bacb8bb98ec42d2137f741fc05782599"
+    }
+  },
+  "build_time_only": false,
+  "mybrew_dependencies": [],
+  "version": "1.13.2"
+}
