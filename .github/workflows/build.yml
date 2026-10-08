@@ -57,7 +57,7 @@ jobs:
           persist-credentials: false
 
       - id: plan
-        uses: eduardobobsin/mybrew/actions/plan@v0.7.7
+        uses: eduardobobsin/mybrew/actions/plan@v0.7.8
         with:
           formula: ${{ inputs.formula }}
           single: ${{ inputs.single }}
@@ -73,13 +73,13 @@ jobs:
         run: brew update
 
       - if: steps.plan.outputs.formulae != ''
-        uses: eduardobobsin/mybrew/actions/import-formula@v0.7.7
+        uses: eduardobobsin/mybrew/actions/import-formula@v0.7.8
         with:
           formulae: ${{ steps.plan.outputs.formulae }}
 
       - id: build
         if: steps.plan.outputs.formulae != ''
-        uses: eduardobobsin/mybrew/actions/build-bottle@v0.7.7
+        uses: eduardobobsin/mybrew/actions/build-bottle@v0.7.8
         with:
           plan-file: ${{ steps.plan.outputs.plan-file }}
           root-url: ${{ env.ROOT_URL }}
@@ -113,7 +113,7 @@ jobs:
 
       - id: s3
         if: vars.MYBREW_S3_BUCKET != ''
-        uses: eduardobobsin/mybrew/actions/publish-s3@v0.7.7
+        uses: eduardobobsin/mybrew/actions/publish-s3@v0.7.8
         with:
           formula: ${{ inputs.formula }}
           bottle-dir: ${{ runner.temp }}/bottles
@@ -124,7 +124,7 @@ jobs:
 
       - id: release
         if: vars.MYBREW_S3_BUCKET == ''
-        uses: eduardobobsin/mybrew/actions/publish-github-release@v0.7.7
+        uses: eduardobobsin/mybrew/actions/publish-github-release@v0.7.8
         with:
           formula: ${{ inputs.formula }}
           bottle-dir: ${{ runner.temp }}/bottles
@@ -138,6 +138,6 @@ jobs:
     runs-on: macos-15-intel
     timeout-minutes: 60
     steps:
-      - uses: eduardobobsin/mybrew/actions/verify-install@v0.7.7
+      - uses: eduardobobsin/mybrew/actions/verify-install@v0.7.8
         with:
           formulae: ${{ needs.publish.outputs.install }}
