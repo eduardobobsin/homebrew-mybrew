@@ -1,0 +1,16 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-19T17:24:54+00:00",
+      "filename": "sqlite-3.54.1.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "bfbd1e97ea7611e5137ed616dc7ca3b85c2862f930514e5f3a5df2136f29bf50"
+    }
+  },
+  "build_seconds": 174,
+  "build_time_only": false,
+  "mybrew_dependencies": [
+    "readline"
+  ],
+  "version": "3.54.1"
+}
