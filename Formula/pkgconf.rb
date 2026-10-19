@@ -1,10 +1,10 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https://github.com/pkgconf/pkgconf"
-  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.7.tar.xz"
-  mirror "https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.7/pkgconf-3.0.7.tar.xz"
-  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.7.tar.xz"
-  sha256 "c926ff491cbd9a331a589160811bd97ab1749b4d5198a519338f2cdfabe6940a"
+  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.9.tar.xz"
+  mirror "https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.9/pkgconf-3.0.9.tar.xz"
+  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.9.tar.xz"
+  sha256 "6ab2d3b8087dcf500e34003a6a8934dca55d0a3d6066aeafb03c352db3e68bfd"
   license "ISC"
   compatibility_version 2
 
@@ -15,7 +15,7 @@ class Pkgconf < Formula
 
   bottle do
     root_url "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia"
-    sha256 cellar: "/usr/local/Cellar", sequoia: "92b82f5ed3a60af6f9dc0b015c82b93e860b80304de2c3f974af41150333684b"
+    sha256 cellar: "/usr/local/Cellar", sequoia: "4a23c69013a5366524c4b900bfff43c761ebdcf11322dcecb5ddb59858fe7bad"
   end
 
   head do
