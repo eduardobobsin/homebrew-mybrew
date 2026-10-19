@@ -1,14 +1,14 @@
 {
   "bottles": {
     "sequoia": {
-      "built_at": "2026-10-08T02:02:29+00:00",
-      "filename": "libunistring-1.4.2.sequoia.bottle.tar.gz",
+      "built_at": "2026-10-19T17:32:49+00:00",
+      "filename": "libunistring-1.5.sequoia.bottle.tar.gz",
       "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
-      "sha256": "48fa2165eab2f3433e531fa2ea8b5359c3e8fcbc8526bf27930d6447d7e98a30"
+      "sha256": "5a0aee9274650a1e7ba3bde2822499ef765a7e79c9804f13d61aaa7ea8a2e740"
     }
   },
-  "build_seconds": 504,
+  "build_seconds": 654,
   "build_time_only": false,
   "mybrew_dependencies": [],
-  "version": "1.4.2"
+  "version": "1.5"
 }

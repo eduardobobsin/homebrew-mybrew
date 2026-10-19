@@ -1,16 +1,16 @@
 class Libunistring < Formula
   desc "C string library for manipulating Unicode strings"
   homepage "https://www.gnu.org/software/libunistring/"
-  url "https://ftpmirror.gnu.org/libunistring/libunistring-1.4.2.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/libunistring/libunistring-1.4.2.tar.gz"
-  mirror "http://ftp.gnu.org/gnu/libunistring/libunistring-1.4.2.tar.gz"
-  sha256 "e82664b170064e62331962126b259d452d53b227bb4a93ab20040d846fec01d8"
+  url "https://ftpmirror.gnu.org/libunistring/libunistring-1.5.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/libunistring/libunistring-1.5.tar.gz"
+  mirror "http://ftp.gnu.org/gnu/libunistring/libunistring-1.5.tar.gz"
+  sha256 "5b0ecd46cbf225375f20ab4056197e66a7ac590e2684c069af407ae3383c9d81"
   license any_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
   compatibility_version 1
 
   bottle do
     root_url "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia"
-    sha256 cellar: :any, sequoia: "48fa2165eab2f3433e531fa2ea8b5359c3e8fcbc8526bf27930d6447d7e98a30"
+    sha256 cellar: :any, sequoia: "5a0aee9274650a1e7ba3bde2822499ef765a7e79c9804f13d61aaa7ea8a2e740"
   end
 
   deny_network_access!
