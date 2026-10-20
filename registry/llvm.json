@@ -1,0 +1,16 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-20T06:29:59+00:00",
+      "filename": "llvm-23.1.3_2.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "5bd6fd6f80c8000caf38384bea039cd558ba933dcefed9c2b0c3edd14bff8b03"
+    }
+  },
+  "build_seconds": 20690,
+  "build_time_only": false,
+  "mybrew_dependencies": [
+    "z3"
+  ],
+  "version": "23.1.3_2"
+}
