@@ -1,0 +1,14 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-10-21T02:06:00+00:00",
+      "filename": "worktrunk-0.81.0.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "902b4ea09e7a0f5525a63de611d1c7cfb89df24f388ccedca20b75630db2153a"
+    }
+  },
+  "build_seconds": 1155,
+  "build_time_only": false,
+  "mybrew_dependencies": [],
+  "version": "0.81.0"
+}
