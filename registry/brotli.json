@@ -1,0 +1,14 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-11-12T15:16:15+00:00",
+      "filename": "brotli-1.2.1.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "1d4d335774af088cf0857a98d685acff1a9ecc4a82c2e55b77a85996586d675d"
+    }
+  },
+  "build_seconds": 271,
+  "build_time_only": false,
+  "mybrew_dependencies": [],
+  "version": "1.2.1"
+}
