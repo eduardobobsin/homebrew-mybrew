@@ -1,10 +1,11 @@
 class OpensslAT4 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://github.com/openssl/openssl/releases/download/openssl-4.0.3/openssl-4.0.3.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/openssl-4.0.3.tar.gz"
-  sha256 "325b5c806167c13b40b1ffeadfe0248197c00eccc4cf123ec1e28d2d2fd216d9"
+  url "https://github.com/openssl/openssl/releases/download/openssl-4.1.0/openssl-4.1.0.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/openssl-4.1.0.tar.gz"
+  sha256 "50c17baf54cb008f6ce42d50deb4b28050a1aad711636cabd4b241c7e90cc2fd"
   license "Apache-2.0"
+  compatibility_version 1
 
   livecheck do
     url "https://openssl-library.org/source/"
@@ -13,7 +14,7 @@ class OpensslAT4 < Formula
 
   bottle do
     root_url "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia"
-    sha256 cellar: "/usr/local/Cellar", sequoia: "9ef6c2f30d9fa6e783b3aa5a5d4f9fea328259aac728620d376c0727fbd762f8"
+    sha256 cellar: "/usr/local/Cellar", sequoia: "880c7b1414adc0ab4fcecef0ce6bb8bf0af1580e97efeffa6e339696d1307f69"
   end
 
   depends_on "ca-certificates" => :no_linkage
