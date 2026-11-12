@@ -1,0 +1,19 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-11-12T14:46:09+00:00",
+      "filename": "libpq-18.6_2.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "b27a69836c20ad757353d3327ad6f8189c470618d527a24d7c36fcb8e68f7c1a"
+    }
+  },
+  "build_seconds": 596,
+  "build_time_only": false,
+  "mybrew_dependencies": [
+    "icu4c@79",
+    "krb5",
+    "openssl@4",
+    "readline"
+  ],
+  "version": "18.6_2"
+}
