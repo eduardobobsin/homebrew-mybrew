@@ -2,14 +2,15 @@ class Aom < Formula
   desc "Codec library for encoding and decoding AV1 video streams"
   homepage "https://aomedia.googlesource.com/aom"
   url "https://aomedia.googlesource.com/aom.git",
-      tag:      "v3.15.1",
-      revision: "44d0a57786f432d933ff64b653347c66f4d0fa1d"
+      tag:      "v3.15.3",
+      revision: "b141d9c45db236335351c8a4b2a14b3ade27c937"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://aomedia.googlesource.com/aom.git", branch: "main"
 
   bottle do
     root_url "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia"
-    sha256 cellar: :any, sequoia: "661827fa9b70a7c84908a0f7d087d67c0486da1fdced97572fc9670542727def"
+    sha256 cellar: :any, sequoia: "e0e64cab381123b2e9c9f3651ed89ac692f3af2729187e44da70c6e734e2c364"
   end
 
   depends_on "cmake" => :build
@@ -18,6 +19,11 @@ class Aom < Formula
 
   on_intel do
     depends_on "nasm" => :build
+  end
+
+  resource "homebrew-bus_qcif_15fps.y4m", :test do
+    url "https://media.xiph.org/video/derf/y4m/bus_qcif_15fps.y4m"
+    sha256 "868fc3446d37d0c6959a48b68906486bd64788b2e795f0e29613cbb1fa73480e"
   end
 
   allow_network_access! :test
@@ -48,11 +54,6 @@ class Aom < Formula
   end
 
   test do
-    resource "homebrew-bus_qcif_15fps.y4m" do
-      url "https://media.xiph.org/video/derf/y4m/bus_qcif_15fps.y4m"
-      sha256 "868fc3446d37d0c6959a48b68906486bd64788b2e795f0e29613cbb1fa73480e"
-    end
-
     testpath.install resource("homebrew-bus_qcif_15fps.y4m")
 
     system bin/"aomenc", "--webm",
