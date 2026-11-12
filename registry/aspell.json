@@ -1,0 +1,14 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-11-12T14:11:40+00:00",
+      "filename": "aspell-0.60.8.3_1.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "4c1a0c159bd43be8f5b0b167f50c4387894dda8960bb3365142dfbbe0880d664"
+    }
+  },
+  "build_seconds": 634,
+  "build_time_only": false,
+  "mybrew_dependencies": [],
+  "version": "0.60.8.3_1"
+}
