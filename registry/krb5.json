@@ -1,0 +1,16 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-11-12T14:35:18+00:00",
+      "filename": "krb5-1.22.3.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "5bd280562ab60b83e07039b619fc1386d6f0e81a912887703bcdc4a5ff533d0c"
+    }
+  },
+  "build_seconds": 408,
+  "build_time_only": false,
+  "mybrew_dependencies": [
+    "openssl@4"
+  ],
+  "version": "1.22.3"
+}
