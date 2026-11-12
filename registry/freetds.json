@@ -1,0 +1,16 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-11-12T14:33:19+00:00",
+      "filename": "freetds-1.5.21.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "c93dae9b92923268381397f054232f9be924fc225f6135d11cf99d9eddd53ca8"
+    }
+  },
+  "build_seconds": 434,
+  "build_time_only": false,
+  "mybrew_dependencies": [
+    "openssl@4"
+  ],
+  "version": "1.5.21"
+}
