@@ -1,8 +1,8 @@
 class JpegTurbo < Formula
   desc "JPEG image codec that aids compression and decompression"
   homepage "https://www.libjpeg-turbo.org/"
-  url "https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.2.0/libjpeg-turbo-3.2.0.tar.gz"
-  sha256 "6f30092cef9fb839779646608f4ee14ae3cbac989c47fa05e841b0841f09878e"
+  url "https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/3.2.1/libjpeg-turbo-3.2.1.tar.gz"
+  sha256 "c27ad72a68da151177929aa969ae773a2da5ac2af9ce946079314fdac8cece7f"
   license all_of: [
     "IJG", # libjpeg API library and programs
     "Zlib", # libjpeg-turbo SIMD source code
@@ -18,7 +18,7 @@ class JpegTurbo < Formula
 
   bottle do
     root_url "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia"
-    sha256 cellar: :any, sequoia: "9caa10bf0b30b80bf2da30a262020739375f783eec6dbdbce2217666a5a2ae99"
+    sha256 cellar: :any, sequoia: "9b6f8ef0bc3aac3ca6e2ed9ea058a71f0c5fe26af00e72d2c839a819c432a046"
   end
 
   depends_on "cmake" => :build
