@@ -1,9 +1,9 @@
 class Freetype < Formula
   desc "Software library to render fonts"
   homepage "https://www.freetype.org/"
-  url "https://downloads.sourceforge.net/project/freetype/freetype2/2.14.3/freetype-2.14.3.tar.xz"
-  mirror "https://download.savannah.gnu.org/releases/freetype/freetype-2.14.3.tar.xz"
-  sha256 "36bc4f1cc413335368ee656c42afca65c5a3987e8768cc28cf11ba775e785a5f"
+  url "https://downloads.sourceforge.net/project/freetype/freetype2/2.15.0/freetype-2.15.0.tar.xz"
+  mirror "https://download.savannah.gnu.org/releases/freetype/freetype-2.15.0.tar.xz"
+  sha256 "93cd47eb719c325107f2d3cf087d06299e944c3b48a40b55537302304dea1dd5"
   license "FTL"
   compatibility_version 1
 
@@ -14,7 +14,7 @@ class Freetype < Formula
 
   bottle do
     root_url "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia"
-    sha256 cellar: :any, sequoia: "e947cc3423ab572cd1ebd4d38f319febca40d06933c8a2486390498169c99e46"
+    sha256 cellar: :any, sequoia: "ce1ba867856010a0338e7b925c55737a5d9ec6e5726b64a8a945a45a40448def"
   end
 
   depends_on "pkgconf" => :build
@@ -27,7 +27,12 @@ class Freetype < Formula
     depends_on "zlib-ng-compat"
   end
 
+  deny_network_access!
+
   def install
+    # Avoid enabling macOS 15.4+ hvf feature for bottle compatibility
+    ENV["ac_cv_header_hvf_Scaler_h"] = "no" if OS.mac? && MacOS.version <= :sequoia
+
     # This file will be installed to bindir, so we want to avoid embedding the
     # absolute path to the pkg-config shim.
     inreplace "builds/unix/freetype-config.in", "%PKG_CONFIG%", "pkg-config"
