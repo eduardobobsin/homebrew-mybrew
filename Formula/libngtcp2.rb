@@ -1,20 +1,20 @@
 class Libngtcp2 < Formula
   desc "IETF QUIC protocol implementation"
   homepage "https://nghttp2.org/ngtcp2/"
-  url "https://github.com/ngtcp2/ngtcp2/releases/download/v1.25.0/ngtcp2-1.25.0.tar.xz"
-  mirror "http://fresh-center.net/linux/www/ngtcp2-1.25.0.tar.xz"
-  sha256 "2a34d2484ba17847a5d11965704e9dd0fac4c6d8efc75ffe1ec7de66d8c6b6fb"
+  url "https://github.com/ngtcp2/ngtcp2/releases/download/v1.26.0/ngtcp2-1.26.0.tar.xz"
+  mirror "http://fresh-center.net/linux/www/ngtcp2-1.26.0.tar.xz"
+  sha256 "7804aa0fa1c39942ba322a90805824c37231f7675b08d0c3cc4332858a7b085e"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ngtcp2/ngtcp2.git", branch: "main"
 
   bottle do
     root_url "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia"
-    sha256 cellar: :any, sequoia: "f29e9ed0184570f34300fa03c10813462b4b413ab6fbf0b0ceb142f022ed18b0"
+    sha256 cellar: :any, sequoia: "8e9989290d539f3353728b25869369dbd7cf9c31afd4c6d974a493151c5e3e8e"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "openssl@3"
+  depends_on "openssl@4"
 
   deny_network_access!
 
