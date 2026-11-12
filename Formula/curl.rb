@@ -2,11 +2,11 @@ class Curl < Formula
   desc "Get a file from an HTTP, HTTPS or FTP server"
   homepage "https://curl.se"
   # Don't forget to update both instances of the version in the GitHub mirror URL.
-  url "https://curl.se/download/curl-8.22.0.tar.bz2"
-  mirror "https://github.com/curl/curl/releases/download/curl-8_22_0/curl-8.22.0.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/curl-8.22.0.tar.bz2"
-  mirror "http://fresh-center.net/linux/www/legacy/curl-8.22.0.tar.bz2"
-  sha256 "5d956a6a22b3c279f50c421ee5d3c9e9d660cb6f115dcf881b579e952130549c"
+  url "https://curl.se/download/curl-8.23.0.tar.bz2"
+  mirror "https://github.com/curl/curl/releases/download/curl-8_23_0/curl-8.23.0.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/curl-8.23.0.tar.bz2"
+  mirror "http://fresh-center.net/linux/www/legacy/curl-8.23.0.tar.bz2"
+  sha256 "95b22eb32bf6d1fa6e3e9463bdb61cece3efc56d86576a9b3cbd428246a6d854"
   license "curl"
   compatibility_version 1
 
@@ -17,7 +17,7 @@ class Curl < Formula
 
   bottle do
     root_url "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia"
-    sha256 cellar: :any, sequoia: "12143fdeece148b0df5b688ed7e1c810e65cb82247ab5fd5b96b6a8a2b9c03a1"
+    sha256 cellar: :any, sequoia: "d60524ad81081bd2554995cc62f77d30eb80046cfda085c15e997960f3d0ad51"
   end
 
   head do
@@ -37,7 +37,7 @@ class Curl < Formula
   depends_on "libngtcp2"
   depends_on "libpsl"
   depends_on "libssh2"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "zstd"
 
   uses_from_macos "krb5"
@@ -68,7 +68,7 @@ class Curl < Formula
 
     args = %W[
       --disable-silent-rules
-      --with-ssl=#{formula_opt_prefix("openssl@3")}
+      --with-ssl=#{formula_opt_prefix("openssl@4")}
       --without-ca-bundle
       --without-ca-path
       --with-ca-fallback
@@ -133,7 +133,6 @@ class Curl < Formula
     assert_path_exists testpath/"certdata.txt"
 
     ENV["PKG_CONFIG_PATH"] = lib/"pkgconfig"
-    ENV.append_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@3")/"pkgconfig"
     system "pkgconf", "--cflags", "libcurl"
   end
 end
