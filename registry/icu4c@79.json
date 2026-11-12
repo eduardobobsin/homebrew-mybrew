@@ -1,0 +1,14 @@
+{
+  "bottles": {
+    "sequoia": {
+      "built_at": "2026-11-12T14:29:34+00:00",
+      "filename": "icu4c%4079-79.1.sequoia.bottle.tar.gz",
+      "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
+      "sha256": "30b2b3e77b258af3fc7fd71abe0bc6565b545389d03d91c9e341a3ffe53bb1de"
+    }
+  },
+  "build_seconds": 1032,
+  "build_time_only": false,
+  "mybrew_dependencies": [],
+  "version": "79.1"
+}
