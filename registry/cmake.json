@@ -1,13 +1,14 @@
 {
   "bottles": {
     "sequoia": {
-      "built_at": "2026-10-08T01:57:55+00:00",
-      "filename": "cmake-4.4.4.sequoia.bottle.tar.gz",
+      "built_at": "2026-11-12T14:28:10+00:00",
+      "filename": "cmake-4.4.5.sequoia.bottle.tar.gz",
       "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
-      "sha256": "0eefa7d78e29c54bee0d6ebf4cbbc1a9d391fcaef91aed51378da094207c320b"
+      "sha256": "9c8993772fd88c856ee8ac7e76a7f199e338319c94c00d54fee15be826fb9d06"
     }
   },
-  "build_time_only": true,
+  "build_seconds": 1619,
+  "build_time_only": false,
   "mybrew_dependencies": [],
-  "version": "4.4.4"
+  "version": "4.4.5"
 }
