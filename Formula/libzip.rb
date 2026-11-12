@@ -1,8 +1,8 @@
 class Libzip < Formula
   desc "C library for reading, creating, and modifying zip archives"
   homepage "https://libzip.org/"
-  url "https://libzip.org/download/libzip-1.12.tar.xz"
-  sha256 "376908d0f0fda13180a19fdc4f7062a1abfb59e09ca07a392d361253b8e60c2b"
+  url "https://libzip.org/download/libzip-1.12.1.tar.xz"
+  sha256 "c40062022a1963c80573d48f6070792297cecd7c6bffe3aefcac0d8b9bee8913"
   license "BSD-3-Clause"
   compatibility_version 1
 
@@ -13,7 +13,7 @@ class Libzip < Formula
 
   bottle do
     root_url "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia"
-    sha256 cellar: :any, sequoia: "4274751b9f2bf1a9f60061d32f881530510dc731abd529ec0600b921d2080bc4"
+    sha256 cellar: :any, sequoia: "b8154c146dc5b21e34b87d793b201897f14aff715d9f3dd922f4705daac22595"
   end
 
   depends_on "cmake" => :build
@@ -24,7 +24,7 @@ class Libzip < Formula
   uses_from_macos "bzip2"
 
   on_linux do
-    depends_on "openssl@3"
+    depends_on "openssl@4"
     depends_on "zlib-ng-compat"
   end
 
