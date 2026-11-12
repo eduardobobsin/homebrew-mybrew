@@ -1,11 +1,12 @@
 class Lz4 < Formula
   desc "Extremely Fast Compression algorithm"
   homepage "https://lz4.github.io/lz4/"
-  url "https://github.com/lz4/lz4/archive/refs/tags/v1.10.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/lz4-1.10.0.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/legacy/lz4-1.10.0.tar.gz"
-  sha256 "537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b"
+  url "https://github.com/lz4/lz4/archive/refs/tags/v1.11.1.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/lz4-1.11.1.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/legacy/lz4-1.11.1.tar.gz"
+  sha256 "683fed08a844ad012196381e40badf80c0bbe4962959761416d41c9e67d77ec7"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://github.com/lz4/lz4.git", branch: "dev"
 
   livecheck do
@@ -15,7 +16,7 @@ class Lz4 < Formula
 
   bottle do
     root_url "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia"
-    sha256 cellar: :any, sequoia: "a92999c913f6fef70bea07c2719dbc05e05fe226b747eeebaf802510bf64cd98"
+    sha256 cellar: :any, sequoia: "40eeebb87531ac70bb23eaae16814d591e36885f89c23f4a1479101379e8c9eb"
   end
 
   depends_on "cmake" => :build

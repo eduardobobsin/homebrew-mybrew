@@ -1,13 +1,14 @@
 {
   "bottles": {
     "sequoia": {
-      "built_at": "2026-10-08T01:57:55+00:00",
-      "filename": "lz4-1.10.0.sequoia.bottle.tar.gz",
+      "built_at": "2026-11-12T14:36:36+00:00",
+      "filename": "lz4-1.11.1.sequoia.bottle.tar.gz",
       "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
-      "sha256": "a92999c913f6fef70bea07c2719dbc05e05fe226b747eeebaf802510bf64cd98"
+      "sha256": "40eeebb87531ac70bb23eaae16814d591e36885f89c23f4a1479101379e8c9eb"
     }
   },
+  "build_seconds": 260,
   "build_time_only": false,
   "mybrew_dependencies": [],
-  "version": "1.10.0"
+  "version": "1.11.1"
 }
