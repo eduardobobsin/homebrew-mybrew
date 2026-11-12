@@ -1,16 +1,16 @@
 {
   "bottles": {
     "sequoia": {
-      "built_at": "2026-10-08T12:52:15+00:00",
-      "filename": "openldap-2.7.1.sequoia.bottle.tar.gz",
+      "built_at": "2026-11-12T14:49:30+00:00",
+      "filename": "openldap-2.7.2.sequoia.bottle.tar.gz",
       "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
-      "sha256": "0d0037488af43bc5661d737d43cbabace1404f4fbfb376906527d5e83435b872"
+      "sha256": "fe32667036070d56bd80971dca4a20bebb4a34f8cb96f8870681bbec9301c0d2"
     }
   },
-  "build_seconds": 370,
+  "build_seconds": 436,
   "build_time_only": false,
   "mybrew_dependencies": [
-    "openssl@3"
+    "openssl@4"
   ],
-  "version": "2.7.1"
+  "version": "2.7.2"
 }
