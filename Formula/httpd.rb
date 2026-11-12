@@ -1,22 +1,22 @@
 class Httpd < Formula
   desc "Apache HTTP server"
   homepage "https://httpd.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=httpd/httpd-2.4.69.tar.bz2"
-  mirror "https://downloads.apache.org/httpd/httpd-2.4.69.tar.bz2"
-  sha256 "c5e6ebc66e349b87d7fc6916ae7cc2a808ed348003de134cf9e9d89d3e2cc73d"
+  url "https://www.apache.org/dyn/closer.lua?path=httpd/httpd-2.4.71.tar.bz2"
+  mirror "https://downloads.apache.org/httpd/httpd-2.4.71.tar.bz2"
+  sha256 "2bc5da5a33c247341de082717d4ebcb5cb49e8b73a05b7fddf7d5d6dc2f8de62"
   license "Apache-2.0"
   compatibility_version 1
 
   bottle do
     root_url "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia"
-    sha256 cellar: "/usr/local/Cellar", sequoia: "b1a740dd5161c01b1e74bfca48448b5d746fba0cf8bc665cd129043ca6ed548a"
+    sha256 cellar: "/usr/local/Cellar", sequoia: "d4a38052c6e219fe1bf6a3166afee707fd8bad9f065c8150cbd4fec89797e99d"
   end
 
   depends_on "apr"
   depends_on "apr-util"
   depends_on "brotli"
   depends_on "libnghttp2"
-  depends_on "openssl@3"
+  depends_on "openssl@4"
   depends_on "pcre2"
 
   uses_from_macos "libxcrypt"
@@ -25,6 +25,10 @@ class Httpd < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  allow_network_access! :test
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
 
   def install
     # fixup prefix references in favour of opt_prefix references
@@ -78,7 +82,7 @@ class Httpd < Formula
                           "--with-libxml2=#{libxml2}",
                           "--with-mpm=prefork",
                           "--with-nghttp2=#{formula_opt_prefix("libnghttp2")}",
-                          "--with-ssl=#{formula_opt_prefix("openssl@3")}",
+                          "--with-ssl=#{formula_opt_prefix(openssl)}",
                           "--with-pcre=#{formula_opt_prefix("pcre2")}/bin/pcre2-config",
                           "--with-z=#{zlib}",
                           "--disable-lua",
