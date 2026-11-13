@@ -1,13 +1,13 @@
 {
   "bottles": {
     "sequoia": {
-      "built_at": "2026-10-19T17:57:31+00:00",
-      "filename": "python%403.15-3.15.0.sequoia.bottle.tar.gz",
+      "built_at": "2026-11-13T18:21:35+00:00",
+      "filename": "python%403.15-3.15.2.sequoia.bottle.tar.gz",
       "root_url": "https://mybrew-bottles.s3.us-east-1.amazonaws.com/bottles/sequoia",
-      "sha256": "b483de5af6d458c1b706602b22374a20e4130442e964895e4c712baedc9d6848"
+      "sha256": "09321ec8ba96313e7ae1eac1b448fd4fafdf637dd89cae9aaad7c540adefaf6c"
     }
   },
-  "build_seconds": 1018,
+  "build_seconds": 1606,
   "build_time_only": false,
   "mybrew_dependencies": [
     "mpdecimal",
@@ -15,5 +15,5 @@
     "sqlite",
     "xz"
   ],
-  "version": "3.15.0"
+  "version": "3.15.2"
 }
